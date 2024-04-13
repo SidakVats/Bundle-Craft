@@ -1,45 +1,42 @@
 import {
-  Card,
+  // Card,
   Input,
   Checkbox,
   Button,
   Typography,
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
-import pattern from "../assets/pattern.png"
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import pattern from "../assets/pattern.png";
 
 export function SignIn() {
+
+  
   return (
     <section className=" m-8 mt-24 flex gap-4">
-      <div className="w-full lg:w-3/5 mt-24">
+      <div className="w-full lg:w-full flex flex-col items-center justify-center rounded-2xl shadow-2xl">
         <div className="text-center">
-          <Typography variant="h2" className="font-bold mb-4">
-            Sign In
-          </Typography>
+          <Typography className="font-bold text-5xl mb-4">Sign In</Typography>
           <Typography
             variant="paragraph"
             color="blue-gray"
-            className="text-lg font-normal"
+            className="text-lg font-normal mt-5 mb-10"
           >
             Enter your email and password to Sign In.
           </Typography>
         </div>
-        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
+        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2" >
           <div className="mb-1 flex flex-col gap-6">
             <Typography
               variant="small"
               color="blue-gray"
-              className="-mb-3 font-medium"
+              className="-mb-3 font-medium "
             >
-              Your email
+              Your Email
             </Typography>
             <Input
               size="lg"
               placeholder="name@mail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-              labelProps={{
-                className: "before:content-none after:content-none",
-              }}
+              className="outline-none rounded-lg !border-t-blue-gray-200 focus:!border-gray-900"
             />
             <Typography
               variant="small"
@@ -52,18 +49,16 @@ export function SignIn() {
               type="password"
               size="lg"
               placeholder="********"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-              labelProps={{
-                className: "before:content-none after:content-none",
-              }}
+              className="outline-none rounded-lg !border-blue-gray-200 focus:!border-gray-900"
             />
           </div>
           <Checkbox
+            className="ms-3 mt-3"
             label={
               <Typography
                 variant="small"
                 color="gray"
-                className="flex items-center justify-start font-medium"
+                className="flex items-center justify-start font-medium ms-2 mt-3 "
               >
                 I agree the&nbsp;
                 <a
@@ -76,22 +71,25 @@ export function SignIn() {
             }
             containerProps={{ className: "-ml-2.5" }}
           />
-          <Button className="mt-6" fullWidth>
+
+
+         <Button className="mt-6 bg-black text-white text-lg" type="submit" fullWidth>
             Sign In
           </Button>
 
           <div className="flex items-center justify-between gap-2 mt-6">
             <Checkbox
+              className="ms-3"
               label={
                 <Typography
                   variant="small"
                   color="gray"
-                  className="flex items-center justify-start font-medium"
+                  className="flex items-center justify-start font-medium ms-2"
                 >
                   Subscribe me to newsletter
                 </Typography>
               }
-              containerProps={{ className: "-ml-2.5" }}
+              // containerProps={{ className: "-ml-2.5" }}
             />
             <Typography variant="small" className="font-medium text-gray-900">
               <a href="#">Forgot Password</a>
@@ -101,7 +99,7 @@ export function SignIn() {
             <Button
               size="lg"
               color="white"
-              className="flex items-center gap-2 justify-center shadow-md"
+              className="flex items-center gap-2 justify-center py-3 shadow-lg hover:shadow-2xl"
               fullWidth
             >
               <svg
@@ -142,7 +140,7 @@ export function SignIn() {
               </svg>
               <span>Sign in With Google</span>
             </Button>
-            <Button
+            {/* <Button
               size="lg"
               color="white"
               className="flex items-center gap-2 justify-center shadow-md"
@@ -150,24 +148,21 @@ export function SignIn() {
             >
               <img src="/img/twitter-logo.svg" height={24} width={24} alt="" />
               <span>Sign in With Twitter</span>
-            </Button>
+            </Button> */}
           </div>
           <Typography
             variant="paragraph"
             className="text-center text-blue-gray-500 font-medium mt-4"
           >
             Not registered?
-            <Link to="/auth/sign-up" className="text-gray-900 ml-1">
+            <Link to="/SignUp" className="text-gray-900 ml-1">
               Create account
             </Link>
           </Typography>
         </form>
       </div>
-      <div className="w-2/4 h-2/4 hidden lg:block">
-        <img
-          src={pattern}
-          className="h-2/4 w-3/4 object-cover rounded-3xl"
-        />
+      <div className="w-full h-2/4 hidden lg:block">
+        <img src={pattern} className="h-2/4 w-full object-cover rounded-3xl" />
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
+// import typographyPlugin from '@tailwindcss/typography';
 
 export default {
   content: [
@@ -84,6 +85,8 @@ export default {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'), 
+
     plugin(function ({ addBase, addComponents, addUtilities }) {
       addBase({});
       addComponents({

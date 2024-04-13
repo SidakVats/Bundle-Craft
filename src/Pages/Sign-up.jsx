@@ -5,25 +5,28 @@ import {
   Button,
   Typography,
 } from "@material-tailwind/react";
+
 import { Link } from "react-router-dom";
 import pattern from "../assets/pattern.png";
-import twitterLogo from "../assets/twitter-logo.svg";
+
+
 
 export function SignUp() {
+
   return (
-    <section className="m-8 flex mt-24">
-      <div className="w-2/5 h-full hidden lg:block">
-        <img src={pattern} className="h-full w-full object-cover rounded-3xl" />
+    <section className="m-8 flex mt-24 gap-5">
+       <div className="w-full h-2/4 hidden lg:block ">
+        <img src={pattern} className="h-2/4 w-full object-cover rounded-3xl" />
       </div>
-      <div className="w-full lg:w-3/5 flex flex-col items-center justify-center">
+      <div className="w-full lg:w-full flex flex-col items-center justify-center rounded-2xl shadow-2xl">
         <div className="text-center">
-          <Typography variant="h2" className="font-bold mb-4">
+          <Typography variant="h2" className="font-bold text-4xl mb-4">
             Join Us Today
           </Typography>
           <Typography
             variant="paragraph"
             color="blue-gray"
-            className="text-lg font-normal"
+            className="text-xl font-normal"
           >
             Enter your email and password to register.
           </Typography>
@@ -31,27 +34,28 @@ export function SignUp() {
         <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2">
           <div className="mb-1 flex flex-col gap-6">
             <Typography
-              variant="small"
+              variant="large"
               color="blue-gray"
-              className="-mb-3 font-medium"
+              className="-mb-3 font-large"
             >
               Your email
             </Typography>
             <Input
               size="lg"
               placeholder="name@mail.com"
-              className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
+              className="outline-none rounded-lg !border-blue-gray-200 focus:!border-gray-900"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
             />
           </div>
           <Checkbox
+          className="ms-3 mt-3"
             label={
               <Typography
                 variant="small"
                 color="gray"
-                className="flex items-center justify-start font-medium"
+                className="flex items-center justify-start font-medium ms-2 mt-3"
               >
                 I agree the&nbsp;
                 <a
@@ -64,7 +68,7 @@ export function SignUp() {
             }
             containerProps={{ className: "-ml-2.5" }}
           />
-          <Button className="mt-6" fullWidth>
+          <Button className="mt-6 text-lg" fullWidth>
             Register Now
           </Button>
 
@@ -72,7 +76,7 @@ export function SignUp() {
             <Button
               size="lg"
               color="white"
-              className="flex items-center gap-2 justify-center shadow-md"
+              className="flex items-center gap-2 justify-center py-3 shadow-lg hover:shadow-2xl"
               fullWidth
             >
               <svg
@@ -113,7 +117,7 @@ export function SignUp() {
               </svg>
               <span>Sign in With Google</span>
             </Button>
-            <Button
+            {/* <Button
               size="lg"
               color="white"
               className="flex items-center gap-2 justify-center shadow-md"
@@ -121,14 +125,14 @@ export function SignUp() {
             >
               <img src={twitterLogo} height={24} width={24} alt="" />
               <span>Sign in With Twitter</span>
-            </Button>
+            </Button> */}
           </div>
           <Typography
             variant="paragraph"
             className="text-center text-blue-gray-500 font-medium mt-4"
           >
             Already have an account?
-            <Link to="/auth/sign-in" className="text-gray-900 ml-1">
+            <Link to="/SignIn" className="text-gray-900 ml-1">
               Sign in
             </Link>
           </Typography>
