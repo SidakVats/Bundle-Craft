@@ -1,7 +1,7 @@
 import Home from "./Pages/Home";
 import { Routes, Route } from "react-router-dom";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
+import Signin from "./Pages/Signin";
+import Signup from "./Pages/Signup";
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 
@@ -11,8 +11,8 @@ const App = () => {
       <Header/>       
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />     
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Signup" element={<Signup />} />     
       </Routes>
       <Footer/>
     </>
