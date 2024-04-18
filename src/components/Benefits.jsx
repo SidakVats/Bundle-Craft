@@ -62,7 +62,7 @@ const Benefits = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center items-center mb-10">
+        <div className="flex justify-center items-center mb-9">
           {showAll ? (
             <Button white onClick={toggleShowAll}>
               Show Less
