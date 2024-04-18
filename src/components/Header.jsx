@@ -69,12 +69,12 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
         <a
-          href="/signup"
+          href="/Signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New Account
         </a>
-        <a href="/signin">
+        <a href="/Signin">
         <Button className="hidden lg:flex">
           Sign In
         </Button>
